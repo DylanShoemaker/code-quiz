@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 4vw;
+}
+
+header {
+  display: flex;
+  flex: 1;  
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: larger;
+}
+.container {
+  text-align: center;
+}
+
+.start {
+  margin: 5vw auto 0 auto;
+  max-width: 60%;
+}
+.start p {
+  text-align: center;
+}
