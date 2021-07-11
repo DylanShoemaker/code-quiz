@@ -17,8 +17,8 @@ var questionTitle = document.getElementById("title"); //references the different
 var questionChoices = document.getElementById("multiple-choice"); //references the different choices, choices will act like submit button as well
 
 var resultsEl = document.getElementById("results"); //Correct! or Wrong! to be displayed on following page with new question
-
 var initialsEl = document.getElementById("initials"); //asks for initials one the last page
+var finalResults = document.getElementById("finalresults"); //asks for initials one the last page
 var submitButton = document.getElementById("submit"); //submit button variable
 
 
@@ -97,13 +97,13 @@ function updatedTime() {
 
 
 
-function endQuiz() {
+function endQuiz() {  //borrow code from the start quiz section
+  var finalResults = document.getElementById("finalresults");
+  questionsEl.setAttribute("class", "hide");   //hide questions
+  finalResults.removeAttribute("class"); // this will display the final results
 
-  questionsEl.setAttribute("class", "hide");
 
-
-  //hide questions
-  //unhide final-results
+  //unhide finalresults
   //use dom to display final score
   //text input box for initials 
   //submit button should transition to high score page

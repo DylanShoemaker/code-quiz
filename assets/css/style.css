@@ -23,14 +23,13 @@ header {
 .container {
   max-width: 35vw;
   margin: 3vw auto 0 auto;
-  
 }
 
 .container p {
-  text-align: center;
-  font-size: large;
-  margin: 2vw auto 2vw auto;
-  flex-wrap: flex;
+
+  font-size: larger;
+  margin: 5px auto 0 auto;
+
 }
 
 button:hover {
@@ -42,7 +41,7 @@ button:hover {
 /*https://stackoverflow.com/questions/3540380/how-can-i-apply-css-on-all-buttons-which-are-present-in-that-page*/
 button {
   display: inline-block;
-  margin: 2vw;
+  margin: .5vw;
   color: #ffffff;
   background-color: #483368;
   font-size: 100%;
@@ -67,3 +66,4 @@ button {
 .start {
   text-align: center;
 }
+
