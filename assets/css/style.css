@@ -34,14 +34,14 @@ header {
   margin: 2vw auto 2vw auto;
 }
 
-.btn:hover {
+button:hover {
   background-color: #886fad;
 }
 
 
 /* button style*/
 /*https://stackoverflow.com/questions/3540380/how-can-i-apply-css-on-all-buttons-which-are-present-in-that-page*/
-.btn {
+button {
   display: inline-block;
   margin: 2vw;
   color: #ffffff;
