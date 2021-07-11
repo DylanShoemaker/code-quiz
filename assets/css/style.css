@@ -58,7 +58,7 @@ button {
 .questiontitle {
   text-align: start;
 }
-.multiple-choice button {
+.choices {
   display: block;
   margin: .5vw 0 0 0;
 }
@@ -67,3 +67,6 @@ button {
   text-align: center;
 }
 
+.choices button {
+  display: block;
+}

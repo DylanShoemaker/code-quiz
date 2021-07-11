@@ -1,26 +1,21 @@
 //what question are we on right now?
 var questionArray = 0; //starts at 0
 var time = questions.length * 15; // 15 seconds per question = 75 seconds total, and the penalty will also be 15 seconds so this might come in handy
-var countdownId; //this will run the countdown, like a container in html 
+var timerContainer; //this will run the countdown, like a container in html 
 
 
 
 
 //first lets add some variables and reference them to the html dom elements
-var countDown = document.getElementById("countdown"); //for the countdown timer in the header
 
 var startButton = document.getElementById("start"); //start button variable
-
-
 var questionsEl = document.getElementById("questions"); //references the different questions with the choices
-var questionTitle = document.getElementById("title"); //references the different questions
-var questionChoices = document.getElementById("multiple-choice"); //references the different choices, choices will act like submit button as well
-
+var questionChoices = document.getElementById("choices"); //references the different choices, choices will act like submit button as well
 var resultsEl = document.getElementById("results"); //Correct! or Wrong! to be displayed on following page with new question
 var initialsEl = document.getElementById("initials"); //asks for initials one the last page
 var finalResults = document.getElementById("finalresults"); //asks for initials one the last page
 var submitButton = document.getElementById("submit"); //submit button variable
-
+var timerEl = document.getElementById("time"); //for the countdown timer in the header
 
 
 function startQuiz() { //what happens when you press the start quiz button
@@ -29,14 +24,14 @@ function startQuiz() { //what happens when you press the start quiz button
 
   questionsEl.removeAttribute("class"); // this will display the questions
  
-  countdownId = setInterval(updatedTime, 1000); //have timer countdown at start of quiz  https://www.w3schools.com/js/js_timing.asp
+  timerContainer = setInterval(updatedTime, 1000); //have timer countdown at start of quiz  https://www.w3schools.com/js/js_timing.asp
 
-  countDown.textContent = time;  //countdown timer is set at 75seconds to begin with
+  timerEl.textContent = time;  //countdown timer is set at 75seconds to begin with
 
-  getQuestions();  //transitional function to next function
-};
+  getQuestion();  //transitional function to next function
+}
 
-function getQuestions() {
+function getQuestion() {
   var currentQuestion = questions[questionArray]; //reference the questions-array.js
 
   var titleEl = document.getElementById("questiontitle");
@@ -47,7 +42,7 @@ function getQuestions() {
 
   
   currentQuestion.choices.forEach(function(choice, i) {  // create a loop to actually add in the new choices https://stackoverflow.com/questions/56024232/use-the-foreach-function-to-add-option-elements-to-select-html-element    
-    //because the old choices are deleted this will add brand new choices into the mix
+    //because the old choices are deleted this will add brand new choices into the mix // uofu repo /04-Web-APIs/02-Challenge/
     var loopChoices = document.createElement("button");
     loopChoices.setAttribute("class", "choice");
     loopChoices.setAttribute("value", choice);
@@ -59,7 +54,7 @@ function getQuestions() {
 
     questionChoices.appendChild(loopChoices); // puts the values on the page
   });
-};
+}
 
 function onButtonClick() {
 
@@ -72,42 +67,51 @@ function onButtonClick() {
 
     time -= 15; //issue 15 second penalty
     if (time < 0) { 
-      time = 0;  //this is so that we dont have negative numbers
+      time = 0;  //this is so that we don't have negative numbers
     }
 
-    countDown.textContent = time; //updates time on page
+    timerEl.textContent = time; //updates time on page
 
     resultsEl.textContent = "Wrong!"; // alerts them that they are wrong on the page though, not an alert pop-up
-    
   }
+
+  resultsEl.setAttribute("class", "results");
+  setTimeout(function() {
+    resultsEl.setAttribute("class", "hideresults");
+  }, 3500); // displaying correct or wrong for 3.5 seconds
 
   questionArray++; // this moves the question along!!!!!!
 
   if (questionArray === questions.length) {
     endQuiz();
   } else {
-    getQuestions();
+    getQuestion();
   }
-};
+}
 
+function endQuiz() {  //borrow code from the start quiz section
+
+  clearInterval(timerContainer);
+
+  var finalResults = document.getElementById("finalresults");
+  finalResults.removeAttribute("class"); // this will display the final results
+  
+  questionsEl.setAttribute("class", "hide");   //hide questions
+  
+
+  var scoreEl = document.getElementById("score");   //display final score
+  scoreEl.textContent = time;
+  
+}
 
 function updatedTime() {
   //this function is for what goes on in the timer, this updated time acts as a container
-};
-
-
-
-function endQuiz() {  //borrow code from the start quiz section
-  var finalResults = document.getElementById("finalresults");
-  questionsEl.setAttribute("class", "hide");   //hide questions
-  finalResults.removeAttribute("class"); // this will display the final results
-
-
-  //unhide finalresults
-  //use dom to display final score
-  //text input box for initials 
-  //submit button should transition to high score page
-};
+  time--;
+  timerEl.textContent = time;
+  if (time <= 0) {
+    endQuiz();
+  }
+}
 
 
 startButton.onclick = startQuiz; //this starts the quiz

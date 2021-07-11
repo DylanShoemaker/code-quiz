@@ -12,7 +12,7 @@
 
     <header>
       <div class="viewhighscores"><a href="./highscore.html">View Highscores</a></div>
-      <div class="timer">Time: <span id="countdown">0</span></div>
+      <div class="timer">Time: <span id="time">0</span></div>
     </header>
 
     <div class="container">
@@ -29,7 +29,7 @@
 
       <div id="questions" class="hide"> <!--https://forum.freecodecamp.org/t/simple-javascript-quiz-problem/291032  by using class = hide we can progress through the answers without having to load new pages each time we have a new question-->
         <h1 id="questiontitle"></h1>
-        <div id="multiple-choice" class ="multiple-choice"></div>
+        <div id="choices" class ="choices"></div>
       </div>
 
       <div id="finalresults" class="hide">
@@ -44,7 +44,8 @@
       <div id="results" class="hideresults"></div>
     </section>
 
-    <script src="./assets/js/script.js"></script>
     <script src="./assets/js/question-array.js"></script>
+    <script src="./assets/js/script.js"></script>
+    
   </body>
 </html>
