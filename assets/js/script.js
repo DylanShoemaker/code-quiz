@@ -70,7 +70,6 @@ function onButtonClick() {
     
   } else {
 
-
     time -= 15; //issue 15 second penalty
     if (time < 0) { 
       time = 0;  //this is so that we dont have negative numbers
@@ -78,25 +77,17 @@ function onButtonClick() {
 
     countDown.textContent = time; //updates time on page
 
-    //add in results to this
-    //add in results to this
-    //add in results to this
-
-
-    questionArray++; // this moves the question along!!!!!!
-
-
-
     resultsEl.textContent = "Wrong!"; // alerts them that they are wrong on the page though, not an alert pop-up
-    if (questionArray === questions.length) {
-      endQuiz();
-    } else {
-      getQuestions();
-    }
+    
   }
 
+  questionArray++; // this moves the question along!!!!!!
 
-
+  if (questionArray === questions.length) {
+    endQuiz();
+  } else {
+    getQuestions();
+  }
 };
 
 
