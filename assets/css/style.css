@@ -19,19 +19,18 @@ header {
 
 /* container style*/
 /*https://stackoverflow.com/questions/28998490/how-to-change-the-width-of-a-css-flex-box-column*/
-.container {
-  text-align: center;
-}
 
 .container {
-  max-width: 80%;
+  max-width: 35vw;
   margin: 3vw auto 0 auto;
+  
 }
 
 .container p {
   text-align: center;
   font-size: large;
   margin: 2vw auto 2vw auto;
+  flex-wrap: flex;
 }
 
 button:hover {
@@ -55,4 +54,16 @@ button {
 
 .hide {
   display: none;
+}
+
+.questiontitle {
+  text-align: start;
+}
+.multiple-choice button {
+  display: block;
+  margin: .5vw 0 0 0;
+}
+
+.start {
+  text-align: center;
 }

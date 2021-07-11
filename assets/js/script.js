@@ -62,7 +62,7 @@ function getQuestions() {
 };
 
 function onButtonClick() {
-  // check if user guessed wrong
+
   if (this.value == questions[questionArray].answer) {
 
     resultsEl.textContent = "Correct!";
@@ -91,7 +91,7 @@ function onButtonClick() {
     if (questionArray === questions.length) {
       endQuiz();
     } else {
-      getQuestion();
+      getQuestions();
     }
   }
 
@@ -107,6 +107,10 @@ function updatedTime() {
 
 
 function endQuiz() {
+
+  questionsEl.setAttribute("class", "hide");
+
+
   //hide questions
   //unhide final-results
   //use dom to display final score
