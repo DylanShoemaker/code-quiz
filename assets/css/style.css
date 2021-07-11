@@ -52,3 +52,7 @@ button {
   padding: .3vw 1vw;
   cursor: pointer;
 }
+
+.hide {
+  display: none;
+}
