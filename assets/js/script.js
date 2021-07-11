@@ -6,7 +6,7 @@ var startButton = document.getElementById("start"); //start button variable
 
 var questionsEl = document.getElementById("questions"); //references the different questions with the choices
 var questionTitle = document.getElementById("title"); //references the different questions
-var choicesEl = document.getElementById("choices"); //references the different choices, choices will act like submit button as well
+var questionChoices = document.getElementById("choices"); //references the different choices, choices will act like submit button as well
 
 var resultsEl = document.getElementById("results"); //Correct! or Wrong! to be displayed on following page with new question
 
