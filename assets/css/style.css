@@ -15,14 +15,40 @@ header {
   justify-content: space-between;
   font-size: larger;
 }
+
+
+/* container style*/
+/*https://stackoverflow.com/questions/28998490/how-to-change-the-width-of-a-css-flex-box-column*/
 .container {
   text-align: center;
 }
 
-.start {
-  margin: 5vw auto 0 auto;
-  max-width: 60%;
+.container {
+  max-width: 80%;
+  margin: 3vw auto 0 auto;
 }
-.start p {
+
+.container p {
   text-align: center;
+  font-size: large;
+  margin: 2vw auto 2vw auto;
+}
+
+.btn:hover {
+  background-color: #886fad;
+}
+
+
+/* button style*/
+/*https://stackoverflow.com/questions/3540380/how-can-i-apply-css-on-all-buttons-which-are-present-in-that-page*/
+.btn {
+  display: inline-block;
+  margin: 2vw;
+  color: #ffffff;
+  background-color: #483368;
+  font-size: 100%;
+  border: 0;
+  border-radius: .5vw;
+  padding: .3vw 1vw;
+  cursor: pointer;
 }
