@@ -1,6 +1,6 @@
 //what question are we on right now?
 var questionArray = 0; //starts at 0
-var time = 75; // 15 seconds per question = 75 seconds total, and the penalty will also be 15 seconds so this might come in handy
+var time = 75; //starts at 75
 var timerContainer; //this will run the countdown, like a container in html 
 
 
@@ -42,7 +42,7 @@ function getQuestion() {
 
   
   currentQuestion.choices.forEach(function(choice, i) {  // create a loop to actually add in the new choices https://stackoverflow.com/questions/56024232/use-the-foreach-function-to-add-option-elements-to-select-html-element    
-    //because the old choices are deleted this will add brand new choices into the mix // uofu repo /04-Web-APIs/02-Challenge/
+    //because the old choices are deleted this will add brand new choices into the mix, it doesnt replace the values, rather it hides the values and unhides new values which are in the array https://utah.bootcampcontent.com/utah-coding-bootcamp/uofu-virt-bo-fsf-pt-06-2021-u-b/-/tree/master/04-Web-APIs/02-Challenge
     var loopChoices = document.createElement("button");
     loopChoices.setAttribute("class", "choice");
     loopChoices.setAttribute("value", choice);
@@ -112,24 +112,6 @@ function updatedTime() {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  
 function showHighScores() {    //https://michael-karen.medium.com/how-to-save-high-scores-in-local-storage-7860baca9d68
   //https://stackoverflow.com/questions/60037063/how-to-save-scores-in-javascript-quiz
@@ -146,7 +128,7 @@ function showHighScores() {    //https://michael-karen.medium.com/how-to-save-hi
     //this pushes the newly formatted scores to local storage for future reference 
     highScores.push(quizResults);
     window.localStorage.setItem("highScores", JSON.stringify(highScores));
-    console.localStorage(highScores);
+
     window.location.href = "highscore.html";   //this will take us to the separate html page
   }
 
@@ -156,7 +138,8 @@ function showHighScores() {    //https://michael-karen.medium.com/how-to-save-hi
 }
 
 
+// print high score function will be located on highscores.js 
 
 submitButton.onclick = showHighScores;
-
 startButton.onclick = startQuiz; //this starts the quiz
+
