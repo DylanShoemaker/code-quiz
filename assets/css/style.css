@@ -61,6 +61,7 @@ button {
 .choices {
   display: block;
   margin: .5vw 0 0 0;
+  width: 33%;
 }
 
 .start {
@@ -69,6 +70,8 @@ button {
 
 .choices button {
   display: block;
+  width: 100%;
+  text-align: start;
 }
 
 .hideresults {
