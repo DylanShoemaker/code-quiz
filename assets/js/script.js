@@ -1,6 +1,6 @@
 //what question are we on right now?
 var questionArray = 0; //starts at 0
-var time = questions.length * 15; // 15 seconds per question = 75 seconds total, and the penalty will also be 15 seconds so this might come in handy
+var time = 75; // 15 seconds per question = 75 seconds total, and the penalty will also be 15 seconds so this might come in handy
 var timerContainer; //this will run the countdown, like a container in html 
 
 
@@ -101,7 +101,6 @@ function endQuiz() {  //borrow code from the start quiz section
 
   var scoreEl = document.getElementById("score");   //display final score
   scoreEl.textContent = time;
-  
 }
 
 function updatedTime() {
@@ -113,5 +112,51 @@ function updatedTime() {
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+function showHighScores() {    //https://michael-karen.medium.com/how-to-save-high-scores-in-local-storage-7860baca9d68
+  //https://stackoverflow.com/questions/60037063/how-to-save-scores-in-javascript-quiz
+  var initials = initialsEl.value.trim();
+  if (initials.length > 1 && initials.length < 3) {   //makes it so that user has to enter 2 characters  //https://stackoverflow.com/questions/14718561/how-to-check-if-a-number-is-between-two-values
+    
+    //this is where we GET the highscores from localstorage
+    var highScores = JSON.parse(window.localStorage.getItem("highScores")) || []; //https://stackoverflow.com/questions/60037063/how-to-save-scores-in-javascript-quiz
+    //formats the scores into two different sections to store them appropriately 
+    var quizResults = {
+      score: time, 
+      initials: initials
+    };
+    //this pushes the newly formatted scores to local storage for future reference 
+    highScores.push(quizResults);
+    window.localStorage.setItem("highScores", JSON.stringify(highScores));
+    console.localStorage(highScores);
+    window.location.href = "highscore.html";   //this will take us to the separate html page
+  }
+
+  else {
+    window.alert("Please enter 2 letters as the initials.");
+  }
+}
+
+
+
+submitButton.onclick = showHighScores;
 
 startButton.onclick = startQuiz; //this starts the quiz

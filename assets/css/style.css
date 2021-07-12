@@ -70,3 +70,6 @@ button {
 .choices button {
   display: block;
 }
+.hideresults {
+  display: none;
+}
