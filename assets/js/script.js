@@ -65,7 +65,7 @@ function onButtonClick() {
     
   } else {
 
-    time -= 15; //issue 15 second penalty
+    time -= 10; //issue 10 second penalty
     if (time < 0) { 
       time = 0;  //this is so that we don't have negative numbers
     }
