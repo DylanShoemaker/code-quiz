@@ -1,6 +1,6 @@
 //what question are we on right now?
-var questionArray = 0; //starts at 0
-var time = 75; //starts at 75
+var questionsIndex = 0; //starts at 0
+var time = questions.length * 15; //starts at 75
 var timerContainer; //this will run the countdown, like a container in html 
 
 
@@ -32,7 +32,7 @@ function startQuiz() { //what happens when you press the start quiz button
 }
 
 function getQuestion() {
-  var currentQuestion = questions[questionArray]; //reference the questions-array.js
+  var currentQuestion = questions[questionsIndex]; //reference the questions-array.js
 
   var titleEl = document.getElementById("questiontitle");
   titleEl.textContent = currentQuestion.title;
@@ -53,12 +53,13 @@ function getQuestion() {
     loopChoices.onclick = onButtonClick; 
 
     questionChoices.appendChild(loopChoices); // puts the values on the page
+    console.log(loopChoices);
   });
 }
 
 function onButtonClick() {
 
-  if (this.value == questions[questionArray].answer) {
+  if (this.value == questions[questionsIndex].answer) {
 
     resultsEl.textContent = "Correct!";
 
@@ -80,9 +81,9 @@ function onButtonClick() {
     resultsEl.setAttribute("class", "hideresults");
   }, 3500); // displaying correct or wrong for 3.5 seconds
 
-  questionArray++; // this moves the question along!!!!!!
+  questionsIndex++; // this moves the question along!!!!!!
 
-  if (questionArray === questions.length) {
+  if (questionsIndex === questions.length) {
     endQuiz();
   } else {
     getQuestion();
@@ -139,7 +140,7 @@ function showHighScores() {    //https://michael-karen.medium.com/how-to-save-hi
 
 
 // print high score function will be located on highscores.js 
-
+// click listeners 
 submitButton.onclick = showHighScores;
 startButton.onclick = startQuiz; //this starts the quiz
 
