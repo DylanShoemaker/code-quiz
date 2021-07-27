@@ -1,5 +1,5 @@
 # Coding Quiz
-> You can use this to text your knowledge or you can use chrome dev tools to take a sneak peek at whats under the hood! </br>
+> You can use this to test your knowledge or you can use chrome dev tools to take a sneak peek at whats under the hood! </br>
 > Live site demo: [_Coding Quiz_](https://dylanshoemaker.github.io/code-quiz/).
 
 ## Description
