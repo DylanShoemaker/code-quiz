@@ -17,4 +17,4 @@
     * Gitpages
 
 ### Screenshot
-![screenshot](https://github.com/DylanShoemaker/code-quiz/blob/main/assets/images/screenshot.PNG)
+![screenshot](https://github.com/DylanShoemaker/code-quiz/blob/main/assets/images/screenshot-code-quiz.PNG)
